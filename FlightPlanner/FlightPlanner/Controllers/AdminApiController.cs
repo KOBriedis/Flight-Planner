@@ -1,12 +1,14 @@
 ﻿using FlightPlanner.Models;
 using FlightPlanner.Storage;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FlightPlanner.Controllers
 {
     [Route("admin-api")]
     [ApiController]
+    [EnableCors]
     public class AdminApiController : ControllerBase
     {
         private static readonly object _lock = new object();

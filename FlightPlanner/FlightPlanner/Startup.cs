@@ -45,6 +45,13 @@ namespace FlightPlanner
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors(builder =>
+            {
+                builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
